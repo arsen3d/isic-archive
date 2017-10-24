@@ -21,6 +21,7 @@ import datetime
 import itertools
 import os
 
+import six
 from natsort import natsorted
 
 from girder.constants import AccessType
@@ -29,12 +30,13 @@ from girder.models.file import File
 from girder.models.folder import Folder
 from girder.models.group import Group
 from girder.models.assetstore import Assetstore
-from girder.models.model_base import GirderException, ValidationException
+from girder.models.model_base import AccessControlledModel, GirderException, ValidationException
 from girder.models.notification import ProgressState
 from girder.utility import assetstore_utilities, mail_utils
 from girder.utility.progress import ProgressContext
 from backports import csv
 
+from .batch import Batch
 from .dataset_helpers import matchFilenameRegex
 from .dataset_helpers.image_metadata import addImageMetadata
 from .user import User
@@ -43,24 +45,39 @@ from ..utility import generateLines
 from ..utility import mail_utils as isic_mail_utils
 
 
-class Dataset(Folder):
+class Dataset(AccessControlledModel):
     def initialize(self):
-        super(Dataset, self).initialize()
+        self.name = 'dataset'
         # TODO: add indexes
 
-        self._filterKeys[AccessType.READ].clear()
-        self.exposeFields(level=AccessType.READ, fields=[
-            '_id', 'name', 'description', 'created', 'creatorId', 'updated',
-            # TODO: re-add once converted files no longer contributes to size
-            # 'size',
-        ])
+    def createDataset(self, name, description, license, attribution, owner, creatorUser):
+        now = datetime.datetime.utcnow()
 
-    def createDataset(self, name, description, creatorUser):
-        # This will raise an exception if a duplicate name exists
-        datasetFolder = self.createFolder(
+        # Validate before saving anything
+        dataset = self.save({
+            # Public informational data
+            'name': name,
+            'description': description,
+            'license': license,
+            'attribution': attribution,
+            # Public Girder data
+            'created': now,
+            'updated': now,
+            # Private informational data
+            'owner': owner,
+            'metadataFiles': [],
+            # Private Girder data
+            'creatorId': creatorUser['_id'],
+            'folderId': None,
+            'access': {
+                'users': [],
+                'groups': []
+            }
+        })
+
+        datasetFolder = Folder().createFolder(
             parent=Collection().findOne({'name': 'Lesion Images'}),
-            name=name,
-            description=description,
+            name=dataset['name'],
             parentType='collection',
             creator=creatorUser,
             public=False,
@@ -71,64 +88,93 @@ class Dataset(Folder):
             doc=datasetFolder,
             access={},
             save=False)
-        # Allow the creator to read
-        datasetFolder = self.setUserAccess(
-            doc=datasetFolder,
-            user=creatorUser,
-            level=AccessType.READ,
-            save=False)
-        # Allow reviewers to admin (so they can delete the dataset)
-        datasetFolder = self.setGroupAccess(
-            doc=datasetFolder,
-            group=Group().findOne({'name': 'Dataset QC Reviewers'}),
-            level=AccessType.ADMIN,
-            save=False)
+        dataset['folderId'] = datasetFolder['_id']
+        dataset = Dataset().save(dataset)
 
-        return self.save(datasetFolder)
+        # TODO: migrate "signature" onto the image
+        # TODO: migrate "anonymous"
 
-    def childImages(self, dataset, limit=0, offset=0, sort=None, filters=None,
-                    **kwargs):
-        # Avoid circular import
-        from .image import Image
-
-        query = filters.copy() if filters is not None else {}
-        query.update({
-            'folderId': dataset['_id']
-        })
-
-        return Image().find(
-            query, limit=limit, offset=offset, sort=sort, **kwargs)
-
-    def _findQueryFilter(self, query):
-        # assumes collection has been created by provision_utility
-        # TODO: cache this value
-        datasetCollection = Collection().findOne(
-            {'name': 'Lesion Images'},
-            fields={'_id': 1}
+        datasetFolder = self.setAccessList(
+            doc=dataset,
+            access={
+                'users': [
+                    # Allow the creator to write
+                    {
+                        'id': creatorUser['_id'],
+                        'level': AccessType.WRITE,
+                        'flags': []
+                    }
+                ],
+                'groups': [
+                    # Allow reviewers to admin (so they can delete the dataset)
+                    {
+                        'id': Group().findOne({'name': 'Dataset QC Reviewers'})['_id'],
+                        'level': AccessType.ADMIN,
+                        'flags': []
+                    }
+                ]
+            }
         )
 
-        newQuery = query.copy() if query is not None else {}
-        newQuery.update({
-            'parentId': datasetCollection['_id']
-        })
-        return newQuery
+        return dataset
 
-    def list(self, user=None, limit=0, offset=0, sort=None):
-        """
-        Return a paginated list of datasets that a user may access.
-        """
-        cursor = self.find({}, sort=sort)
-        return self.filterResultsByPermission(
-            cursor=cursor, user=user, level=AccessType.READ, limit=limit,
-            offset=offset)
+    def setUserAccess(self, doc, user, level, save=False, flags=None, currentUser=None,
+                      force=False):
+        raise NotImplementedError('Use setAccessList instead')
 
-    def find(self, query=None, **kwargs):
-        datasetQuery = self._findQueryFilter(query)
-        return super(Dataset, self).find(datasetQuery, **kwargs)
+    def setGroupAccess(self, doc, group, level, save=False, flags=None, currentUser=None,
+                       force=False):
+        raise NotImplementedError('Use setAccessList instead')
 
-    def findOne(self, query=None, **kwargs):
-        datasetQuery = self._findQueryFilter(query)
-        return super(Dataset, self).findOne(datasetQuery, **kwargs)
+    def setAccessList(self, doc, access, save=True, user=None, force=False):
+        if not save:
+            raise GirderException('"save" must always be True')
+
+        # This will validate "access", and set "doc['access']" to a cleaned list
+        doc = super(Dataset, self).setAccessList(doc, access, save=True, user=None, force=True)
+
+        # Set the folder permissions to READ for all named users and groups
+        folder = Folder().load(doc['folderId'], force=True)
+        Folder().setAccessList(
+            folder,
+            {
+                'users': [
+                    {
+                        'id': access['id'],
+                        'level': AccessType.READ,
+                        'flags': []
+                    }
+                    for access in doc['access']['users']
+                ],
+                'groups': [
+                    {
+                        'id': access['id'],
+                        'level': AccessType.READ,
+                        'flags': []
+                    }
+                    for access in doc['access']['groups']
+                ]
+            },
+            save=True,
+            # Don't need user, since flags are not set
+            user=None,
+            force=True
+        )
+
+        return doc
+
+    def setPublic(self, doc, public, save=True):
+        if not save:
+            raise GirderException('"save" must always be True')
+
+        self.update(
+            {'_id': doc['_id']},
+            {'$set': {'public': public}}
+        )
+        Folder().update(
+            {'_id': doc['folderId']},
+            {'$set': {'public': public}}
+        )
 
     def filter(self, dataset, user=None, additionalKeys=None):
         # Avoid circular import
@@ -139,25 +185,20 @@ class Dataset(Folder):
             '_modelType': 'dataset',
             'name': dataset['name'],
             'description': dataset['description'],
+            'license': dataset['license'],
+            'attribution': dataset['attribution'],
             'created': dataset['created'],
             'creator': User().filterSummary(
                 User().load(dataset['creatorId'], force=True, exc=True),
                 user),
             # TODO: verify that "updated" is set correctly
             'updated': dataset['updated'],
-            'license': dataset['meta']['license'],
-            'attribution':
-                dataset['meta']['attribution']
-                if not dataset['meta']['anonymous'] else
-                'Anonymous',
-            'count': Image().find({'folderId': dataset['_id']}).count()
+            'count': Image().find({'folderId': dataset['folderId']}).count()
         }
-        # TODO: Use the real permissions on this dataset instead
-        if User().canCreateDataset(user):
+        if self.hasAccess(dataset, user, level=AccessType.WRITE):
             output.update({
-                'owner': dataset['meta']['owner'],
-                'signature': dataset['meta']['signature'],
-                'metadataFiles': dataset['meta']['metadataFiles'],
+                'owner': dataset['owner'],
+                'metadataFiles': dataset['metadataFiles'],
             })
 
         return output
@@ -172,47 +213,71 @@ class Dataset(Folder):
         }
 
     def validate(self, doc, **kwargs):
-        # TODO: implement
-        # Validate name. This is redundant, because Folder also validates the
-        # name, but this allows for a more specific error message.
+        # Name
+        assert isinstance(doc['name'], six.string_types)
         doc['name'] = doc['name'].strip()
         if not doc['name']:
-            raise ValidationException('Dataset name must not be empty.', 'name')
-        return super(Dataset, self).validate(doc, **kwargs)
+            raise ValidationException('Name must not be empty.', 'name')
+        if self.find({
+            '_id': {'$ne': doc.get('_id')},
+            'name': doc['name']
+        }).count():
+            raise ValidationException('Name must be unique.', 'name')
 
-    def ingestDataset(self, zipFile, user, name, owner, description,
-                      license, signature, anonymous, attribution,
-                      sendMail=False):
+        # Description
+        assert isinstance(doc['description'], six.string_types)
+        doc['description'] = doc['description'].strip()
+
+        # License
+        assert isinstance(doc['license'], six.string_types)
+        doc['license'] = doc['license'].strip()
+        if doc['license'] not in {'CC-0', 'CC-BY', 'CC-BY-NC'}:
+            raise ValidationException('Unknown license type.', 'license')
+
+        # Attribution
+        assert isinstance(doc['attribution'], six.string_types)
+        doc['attribution'] = doc['attribution'].strip()
+        if not doc['attribution']:
+            raise ValidationException('Attribution must not be empty.', 'attribution')
+        if doc['attribution'].lower() == 'anonymous':
+            doc['attribution'] = 'Anonymous'
+        if doc['attribution'] == 'Anonymous' and doc['license'] != 'CC-0':
+            raise ValidationException(
+                'Attribution may not be anonymous with a %s license.' % doc['license'],
+                'attribution')
+
+        # Owner
+        assert isinstance(doc['owner'], six.string_types)
+        doc['owner'] = doc['owner'].strip()
+        if not doc['owner']:
+            raise ValidationException('Owner must not be empty.', 'owner')
+
+        return doc
+
+    def addZipBatch(self, dataset, zipFile, signature, user, sendMail=False):
         """
         Ingest an uploaded dataset from a .zip file of images. The images are
-        extracted to a "Pre-review" folder within a new dataset folder.
+        extracted to a "Pre-review" folder within the dataset folder.
         """
-        # Create dataset folder
-        dataset = self.createDataset(name, description, user)
-
-        # Set dataset metadata, including license info
-        dataset['meta'] = {
-            'owner': owner,
-            'signature': signature,
-            'anonymous': anonymous,
-            'attribution': attribution,
-            'license': license,
-            'metadataFiles': []
-        }
-        dataset = Dataset().save(dataset)
+        batch = Batch().createBatch(
+            dataset=dataset,
+            creator=user,
+            signature=signature
+        )
 
         prereviewFolder = Folder().createFolder(
             parent=dataset,
             name='Pre-review',
             parentType='folder',
             creator=user,
-            public=False)
+            public=False,
+            reuseExisting=True)
         prereviewFolder = Folder().copyAccessPolicies(
             dataset, prereviewFolder, save=True)
 
         # Process zip file
         # TODO: gracefully clean up after exceptions in handleZip
-        self._handleZip(prereviewFolder, user, zipFile)
+        self._handleZip(batch, prereviewFolder, user, zipFile)
 
         # Send email confirmations
         if sendMail:
@@ -220,15 +285,11 @@ class Dataset(Folder):
             params = {
                 'group': False,
                 'host': host,
+                'dataset': dataset,
                 # We intentionally leak full user details here, even though all
                 # email recipients may not have access permissions to the user
                 'user': user,
-                'name': name,
-                'owner': owner,
-                'description': description,
-                'license': license,
-                'signature': signature,
-                'attribution': 'Anonymous' if anonymous else attribution
+                'batch': batch,
             }
             subject = 'ISIC Archive: Dataset Upload Confirmation'
             templateFilename = 'ingestDatasetConfirmation.mako'
@@ -245,9 +306,7 @@ class Dataset(Folder):
                 templateParams=params,
                 subject=subject)
 
-        return dataset
-
-    def _handleZip(self, prereviewFolder, user, zipFile):
+    def _handleZip(self, batch, prereviewFolder, user, zipFile):
         # Avoid circular import
         from .image import Image
 
@@ -278,13 +337,14 @@ class Dataset(Folder):
                             imageDataSize=os.path.getsize(originalFilePath),
                             originalName=originalFileName,
                             parentFolder=prereviewFolder,
-                            creator=user
+                            creator=user,
+                            batch=batch
                         )
 
     def prereviewFolder(self, dataset):
         return Folder().findOne({
             'name': 'Pre-review',
-            'parentId': dataset['_id']
+            'parentId': dataset['folderId']
         })
 
     def reviewImages(self, dataset, acceptedImages, flaggedImages, user):
@@ -468,7 +528,7 @@ class Dataset(Folder):
         from .image import Image
 
         imageQuery = {
-            'folderId': dataset['_id']
+            'folderId': dataset['folderId']
             # TODO: match images in the Pre-review folder too
             # 'folderId': {'$in': datasetFolderIds}
         }

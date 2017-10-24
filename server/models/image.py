@@ -62,7 +62,7 @@ class Image(Item):
                     'onSuperpixelsUpload', self.onSuperpixelsUpload)
 
     def createImage(self, imageDataStream, imageDataSize, originalName,
-                    parentFolder, creator):
+                    parentFolder, creator, batch):
         newIsicId = Setting().get(PluginSettings.MAX_ISIC_ID) + 1
         image = self.createItem(
             name='ISIC_%07d' % newIsicId,
@@ -79,7 +79,8 @@ class Image(Item):
             'acquisition': {},
             'clinical': {},
             'unstructured': {},
-            'tags': []
+            'tags': [],
+            'batchId': batch['_id']
         })
 
         originalFile = Upload().uploadFromFile(
