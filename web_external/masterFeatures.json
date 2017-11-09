@@ -1,1034 +1,1009 @@
 [
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Angulated lines / polygons / zig-zag pattern"],
+        "name": ["Metaphoric", "Lines", "Angulated lines / polygons / zig-zag pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Atypical pigment network / reticulation"],
+        "name": ["Metaphoric", "Lines", "Atypical pigment network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Branched streaks"],
+        "name": ["Metaphoric", "Lines", "Branched streaks"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Broadened pigment network / reticulation"],
+        "name": ["Metaphoric", "Lines", "Broadened pigment network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Cerebriform pattern"],
+        "name": ["Metaphoric", "Lines", "Cerebriform pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Crypts"],
+        "name": ["Metaphoric", "Lines", "Crypts"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Delicate Pigment Network / reticulation"],
+        "name": ["Metaphoric", "Lines", "Delicate Pigment Network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Fibrillar Pattern"],
+        "name": ["Metaphoric", "Lines", "Fibrillar Pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Fingerprint pattern"],
+        "name": ["Metaphoric", "Lines", "Fingerprint pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Leaf like areas"],
+        "name": ["Metaphoric", "Lines", "Leaf like areas"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Negative pigment network"],
+        "name": ["Metaphoric", "Lines", "Negative pigment network"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Parallel furrows pattern (volar lesions)"],
+        "name": ["Metaphoric", "Lines", "Parallel furrows pattern (volar lesions)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Parallel lines (volar lesions)"],
+        "name": ["Metaphoric", "Lines", "Parallel lines (volar lesions)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Parallel ridge pattern (volar lesions)"],
+        "name": ["Metaphoric", "Lines", "Parallel ridge pattern (volar lesions)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Pseudopods"],
+        "name": ["Metaphoric", "Lines", "Pseudopods"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Radial streaming"],
+        "name": ["Metaphoric", "Lines", "Radial streaming"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Rhomboids (facial skin)"],
+        "name": ["Metaphoric", "Lines", "Rhomboids (facial skin)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Shinny white streaks"],
+        "name": ["Metaphoric", "Lines", "Shinny white streaks"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Spoke wheel areas"],
+        "name": ["Metaphoric", "Lines", "Spoke wheel areas"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Streaks"],
+        "name": ["Metaphoric", "Lines", "Streaks"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Starburst pattern"],
+        "name": ["Metaphoric", "Lines", "Starburst pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "Typical pigment network / reticulation"],
+        "name": ["Metaphoric", "Lines", "Typical pigment network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Lines", "NOS"],
+        "name": ["Metaphoric", "Lines", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Blue globules"],
+        "name": ["Metaphoric", "Globules / Clods", "Blue globules"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Blue-gray ovoid nests"],
+        "name": ["Metaphoric", "Globules / Clods", "Blue-gray ovoid nests"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Cobblestone Pattern "],
+
+        "name": ["Metaphoric", "Globules / Clods", "Cobblestone Pattern "],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Comedo-like openings"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Comedo-like openings"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Concentric Globules"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Concentric Globules"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Globules irregular"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Globules irregular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Globules regular"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Globules regular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Leaflike area"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Leaflike area"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Spoke wheel areas"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Spoke wheel areas"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Milia-like cysts"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Milia-like cysts"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Milky red globules"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Milky red globules"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Red lacunes"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Red lacunes"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Rim of brown globules"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Rim of brown globules"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Shiny white blotches and strands"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Shiny white blotches and strands"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "Variant of spoke wheel area"],
+
+        "name": ["Metaphoric", "Globules / Clods", "Variant of spoke wheel area"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "White globules"],
+
+        "name": ["Metaphoric", "Globules / Clods", "White globules"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Globules / Clods", "NOS"],
+
+        "name": ["Metaphoric", "Globules / Clods", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Annular-granular pattern"],
+
+        "name": ["Metaphoric", "Dots", "Annular-granular pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Black"],
+
+        "name": ["Metaphoric", "Dots", "Black"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Blue-gray  "],
+
+        "name": ["Metaphoric", "Dots", "Blue-gray  "],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Brown"],
+
+        "name": ["Metaphoric", "Dots", "Brown"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Granularity"],
+
+        "name": ["Metaphoric", "Dots", "Granularity"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Irregular"],
+
+        "name": ["Metaphoric", "Dots", "Irregular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Linear"],
+
+        "name": ["Metaphoric", "Dots", "Linear"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Linear dots"],
+
+        "name": ["Metaphoric", "Dots", "Linear dots"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Milia-like cysts"],
+
+        "name": ["Metaphoric", "Dots", "Milia-like cysts"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Peppering"],
+
+        "name": ["Metaphoric", "Dots", "Peppering"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Regular"],
+
+        "name": ["Metaphoric", "Dots", "Regular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Rosettes"],
+
+        "name": ["Metaphoric", "Dots", "Rosettes"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Targetoid dots"],
+
+        "name": ["Metaphoric", "Dots", "Targetoid dots"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "Yellow"],
+
+        "name": ["Metaphoric", "Dots", "Yellow"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Dots", "NOS"],
+
+        "name": ["Metaphoric", "Dots", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "Asymmetric follicular openings"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "Asymmetric follicular openings"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "Brown"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "Brown"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "Circle within a circle"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "Circle within a circle"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "Fish scale (mucosal lesions)"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "Fish scale (mucosal lesions)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "Gray"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "Gray"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "White"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "White"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Circles & Semicircles", "NOS"],
+
+        "name": ["Metaphoric", "Circles & Semicircles", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Blotch Irregular"],
+
+        "name": ["Metaphoric", "Structureless", "Blotch Irregular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Blotch Regular"],
+
+        "name": ["Metaphoric", "Structureless", "Blotch Regular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Blue-whitish veil"],
+
+        "name": ["Metaphoric", "Structureless", "Blue-whitish veil"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Central white patch"],
+
+        "name": ["Metaphoric", "Structureless", "Central white patch"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Central white patch"],
+
+        "name": ["Metaphoric", "Structureless", "Central white patch"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Homogeneous pattern", "Blue"],
+
+        "name": ["Metaphoric", "Structureless", "Homogeneous pattern", "Blue"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Homogeneous pattern", "Brown"],
+
+        "name": ["Metaphoric", "Structureless", "Homogeneous pattern", "Brown"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Homogeneous pattern", "Pink"],
+
+        "name": ["Metaphoric", "Structureless", "Homogeneous pattern", "Pink"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Homogeneous pattern", "NOS"],
+
+        "name": ["Metaphoric", "Structureless", "Homogeneous pattern", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Milky red areas"],
+
+        "name": ["Metaphoric", "Structureless", "Milky red areas"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Pseudonetwork"],
+
+        "name": ["Metaphoric", "Structureless", "Pseudonetwork"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Rainbow pattern"],
+
+        "name": ["Metaphoric", "Structureless", "Rainbow pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Scar-like depigmentation"],
+
+        "name": ["Metaphoric", "Structureless", "Scar-like depigmentation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Strawberry pattern"],
+
+        "name": ["Metaphoric", "Structureless", "Strawberry pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "Structureless brown (tan)"],
+
+        "name": ["Metaphoric", "Structureless", "Structureless brown (tan)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Structureless", "NOS"],
+
+        "name": ["Metaphoric", "Structureless", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Arborizing"],
+
+        "name": ["Metaphoric", "Vessels", "Arborizing"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Comma"],
+
+        "name": ["Metaphoric", "Vessels", "Comma"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Corckscrew"],
+
+        "name": ["Metaphoric", "Vessels", "Corckscrew"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Crown"],
+
+        "name": ["Metaphoric", "Vessels", "Crown"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Dotted"],
+
+        "name": ["Metaphoric", "Vessels", "Dotted"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Glomerular"],
+
+        "name": ["Metaphoric", "Vessels", "Glomerular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Hairpin"],
+
+        "name": ["Metaphoric", "Vessels", "Hairpin"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Linear  Irregular"],
+
+        "name": ["Metaphoric", "Vessels", "Linear  Irregular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Monomorphous"],
+
+        "name": ["Metaphoric", "Vessels", "Monomorphous"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Polymorphous"],
+
+        "name": ["Metaphoric", "Vessels", "Polymorphous"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "String of pearls"],
+
+        "name": ["Metaphoric", "Vessels", "String of pearls"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "Targetoid"],
+
+        "name": ["Metaphoric", "Vessels", "Targetoid"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Vessels", "NOS"],
+
+        "name": ["Metaphoric", "Vessels", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Network", "Atypical pigment network / reticulation"],
+
+        "name": ["Metaphoric", "Network", "Atypical pigment network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Network", "Broadened pigment network / reticulation"],
+
+        "name": ["Metaphoric", "Network", "Broadened pigment network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Network", "Delicate Pigment Network / reticulation"],
+
+        "name": ["Metaphoric", "Network", "Delicate Pigment Network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Network", "Negative pigment network"],
+
+        "name": ["Metaphoric", "Network", "Negative pigment network"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Network", "Typical pigment network / reticulation"],
+
+        "name": ["Metaphoric", "Network", "Typical pigment network / reticulation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Network", "NOS"],
+
+        "name": ["Metaphoric", "Network", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Cerebriform"],
+
+        "name": ["Metaphoric", "Pattern", "Cerebriform"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Fibrilar"],
+
+        "name": ["Metaphoric", "Pattern", "Fibrilar"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Fingerprint"],
+
+        "name": ["Metaphoric", "Pattern", "Fingerprint"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Homogeneous", "Blue"],
+
+        "name": ["Metaphoric", "Pattern", "Homogeneous", "Blue"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Homogeneous", "Brown"],
+
+        "name": ["Metaphoric", "Pattern", "Homogeneous", "Brown"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Homogeneous", "Pink"],
+
+        "name": ["Metaphoric", "Pattern", "Homogeneous", "Pink"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Homogeneous", "NOS"],
+
+        "name": ["Metaphoric", "Pattern", "Homogeneous", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Honeycomb"],
+
+        "name": ["Metaphoric", "Pattern", "Honeycomb"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Latticelike"],
+
+        "name": ["Metaphoric", "Pattern", "Latticelike"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Parallel Furrow"],
+
+        "name": ["Metaphoric", "Pattern", "Parallel Furrow"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Parallel Ridge"],
+
+        "name": ["Metaphoric", "Pattern", "Parallel Ridge"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Rainbow"],
+
+        "name": ["Metaphoric", "Pattern", "Rainbow"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Starburst"],
+
+        "name": ["Metaphoric", "Pattern", "Starburst"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "Strawberry"],
+
+        "name": ["Metaphoric", "Pattern", "Strawberry"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Pattern", "NOS"],
+
+        "name": ["Metaphoric", "Pattern", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Regression structures", "Peppering/Granularity"],
+
+        "name": ["Metaphoric", "Regression structures", "Peppering/Granularity"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Regression structures", "Scarlike depigmentation"],
+
+        "name": ["Metaphoric", "Regression structures", "Scarlike depigmentation"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Regression structures", "NOS"],
+
+        "name": ["Metaphoric", "Regression structures", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Shiny white structures", "Rosettes"],
+
+        "name": ["Metaphoric", "Shiny white structures", "Rosettes"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Shiny white structures", "Shiny white blotches and strands"],
+
+        "name": ["Metaphoric", "Shiny white structures", "Shiny white blotches and strands"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Shiny white structures", "Shiny white streaks"],
+
+        "name": ["Metaphoric", "Shiny white structures", "Shiny white streaks"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Shiny white structures", "NOS"],
+
+        "name": ["Metaphoric", "Shiny white structures", "NOS"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Facial Skin ", "Annular-granular pattern"],
+
+        "name": ["Metaphoric", "Facial Skin ", "Annular-granular pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Facial Skin ", "Asymmetric follicular openings"],
+
+        "name": ["Metaphoric", "Facial Skin ", "Asymmetric follicular openings"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Facial Skin ", "Brown Circles"],
+
+        "name": ["Metaphoric", "Facial Skin ", "Brown Circles"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Facial Skin ", "Circle within a circle"],
+
+        "name": ["Metaphoric", "Facial Skin ", "Circle within a circle"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Facial Skin ", "Pseudonetwork"],
+
+        "name": ["Metaphoric", "Facial Skin ", "Pseudonetwork"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Facial Skin ", "Rhomboids / Zig-zag pattern"],
+
+        "name": ["Metaphoric", "Facial Skin ", "Rhomboids / Zig-zag pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Volar lesions", "Parallel furrow pattern"],
+
+        "name": ["Metaphoric", "Volar lesions", "Parallel furrow pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Volar lesions", "Fibrilar pattern"],
+
+        "name": ["Metaphoric", "Volar lesions", "Fibrilar pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Volar lesions", "Latticelike pattern"],
+
+        "name": ["Metaphoric", "Volar lesions", "Latticelike pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Volar lesions", "Parallel lines"],
+
+        "name": ["Metaphoric", "Volar lesions", "Parallel lines"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Volar lesions", "Parallel ridge pattern "],
+
+        "name": ["Metaphoric", "Volar lesions", "Parallel ridge pattern "],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Nail lesions", "Blood spots"],
+
+        "name": ["Metaphoric", "Nail lesions", "Blood spots"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Nail lesions", "Granular inclusions"],
+
+        "name": ["Metaphoric", "Nail lesions", "Granular inclusions"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Nail lesions", "Hutchinson sign"],
+
+        "name": ["Metaphoric", "Nail lesions", "Hutchinson sign"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Nail lesions", "Irregular lines"],
+
+        "name": ["Metaphoric", "Nail lesions", "Irregular lines"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Nail lesions", "Pseudo-Hutchinson sign"],
+
+        "name": ["Metaphoric", "Nail lesions", "Pseudo-Hutchinson sign"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Nail lesions", "Regular lines"],
+
+        "name": ["Metaphoric", "Nail lesions", "Regular lines"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Angulated lines/polygons"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Angulated lines/polygons"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Annular-granular pattern"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Annular-granular pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Asymmetric pigmented follicular openings"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Asymmetric pigmented follicular openings"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Black lacunae"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Black lacunae"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Blood spots"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Blood spots"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Blotch Irregular"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Blotch Irregular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Blotch Regular"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Blotch Regular"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Blue lacunae"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Blue lacunae"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Blue-whitish veil"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Blue-whitish veil"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Circle within a circle"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Circle within a circle"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Comedo-like openings"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Comedo-like openings"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Crypts"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Crypts"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Disruption of parallelism"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Disruption of parallelism"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Fissures"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Fissures"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Granularity or granules"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Granularity or granules"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Hutchinson sign"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Hutchinson sign"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Leaflike area"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Leaflike area"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Milia-like cysts, cloudy or starry"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Milia-like cysts, cloudy or starry"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Moth-eaten border"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Moth-eaten border"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "pseudo-Hutchinson sign"],
+
+        "name": ["Metaphoric", "Miscellaneous", "pseudo-Hutchinson sign"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Pseudonetwork"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Pseudonetwork"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Pseudopods"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Pseudopods"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Radial streaming"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Radial streaming"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Red lacunae"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Red lacunae"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Red-purple lacunae"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Red-purple lacunae"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "regularly bended ribbon sign"],
+
+        "name": ["Metaphoric", "Miscellaneous", "regularly bended ribbon sign"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Rhomboids/zig-zag pattern"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Rhomboids/zig-zag pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Ridges"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Ridges"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Scale"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Scale"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Setting-sun pattern"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Setting-sun pattern"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Spoke wheel area"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Spoke wheel area"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Streaks"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Streaks"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "String of pearls"],
+
+        "name": ["Metaphoric", "Miscellaneous", "String of pearls"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Structureless, brown (tan)"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Structureless, brown (tan)"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Twisted red loops"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Twisted red loops"],
         "aliases": []
     },
     {
         "type": "superpixel",
-        "nomenclature": "metaphoric",
-        "name": ["Miscellaneous", "Ulceration / erosion"],
+
+        "name": ["Metaphoric", "Miscellaneous", "Ulceration / erosion"],
         "aliases": []
     }
 ]
