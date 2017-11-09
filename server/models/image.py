@@ -391,6 +391,9 @@ class Image(Item):
                  70.0, 80.0, 90.0, 100.0, 110.0]
             )
         ]
+        selectResponseFacets = [
+            'responses.benign_malignant'
+        ]
 
         # Build and run the pipeline
         folderQuery = {
@@ -433,6 +436,30 @@ class Image(Item):
                     'default': None
                 }}
             ]
+        for facetName in selectResponseFacets:
+            facetId = facetName.replace('.', '__')
+            facetStages[facetId] = [
+                {'$lookup': {
+                    'from': 'item',
+                    'localField': '_id',
+                    'foreignField': 'meta.imageId',
+                    'as': 'annotations'
+                }},
+                {'$project': {
+                    'annotations': {
+                        'meta': {
+                            # 'annotations': {
+                            'responses': {
+                                facetName.split('.')[-1]: 1
+                            }
+                        }
+                    }
+                }},
+                {'$unwind': {
+                    'path': '$annotations'}
+                },
+                {'$sortByCount': '$annotations.meta.%s' % facetName}
+            ]
         histogram = next(self.collection.aggregate([
             {'$match': query},
             {'$facet': facetStages}
@@ -446,14 +473,15 @@ class Image(Item):
         for facetName in itertools.chain(
                 categorialFacets,
                 tagFacets,
-                [facetName for facetName, boundaries in ordinalFacets]
+                [facetName for facetName, boundaries in ordinalFacets],
+                selectResponseFacets
         ):
             facetId = facetName.replace('.', '__')
             histogram[facetName] = histogram.pop(facetId, [])
             histogram[facetName].sort(
                 # Sort facet bins, placing "None" at the end
                 key=lambda facetBin: (facetBin['_id'] is None, facetBin['_id']))
-        for facetName in itertools.chain(categorialFacets, tagFacets):
+        for facetName in itertools.chain(categorialFacets, tagFacets, selectResponseFacets):
             for facetBin in histogram[facetName]:
                 facetBin['label'] = facetBin.pop('_id')
         for facetName, boundaries in ordinalFacets:

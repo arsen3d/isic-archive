@@ -40,7 +40,7 @@ class AnnotationResource(IsicResource):
 
         self.route('GET', (), self.find)
         self.route('GET', (':id',), self.getAnnotation)
-        self.route('GET', (':id', 'render'), self.renderAnnotation)
+        self.route('GET', (':id', 'render'), self.renderResponse)
         self.route('PUT', (':id',), self.submitAnnotation)
 
     @describeRoute(
@@ -116,7 +116,7 @@ class AnnotationResource(IsicResource):
         }
         if Annotation().getState(annotation) == Study().State.COMPLETE:
             output.update({
-                'annotations': annotation['meta']['annotations'],
+                'responses': annotation['meta']['responses'],
                 'status': annotation['meta']['status'],
                 'startTime': annotation['meta']['startTime'],
                 'stopTime': annotation['meta']['startTime'],
@@ -125,9 +125,9 @@ class AnnotationResource(IsicResource):
         return output
 
     @describeRoute(
-        Description('Render an annotation feature, overlaid on its image.')
+        Description('Render an annotation response, overlaid on its image.')
         .param('id', 'The ID of the annotation to be rendered.', paramType='path')
-        .param('featureId', 'The feature ID to be rendered.', paramType='query', required=True)
+        .param('responseId', 'The response ID to be rendered.', paramType='query', required=True)
         .param('contentDisposition',
                'Specify the Content-Disposition response header disposition-type value.',
                required=False, enum=['inline', 'attachment'])
@@ -137,24 +137,16 @@ class AnnotationResource(IsicResource):
     @access.cookie
     @access.public
     @loadmodel(model='annotation', plugin='isic_archive', level=AccessType.READ)
-    def renderAnnotation(self, annotation, params):
+    def renderResponse(self, annotation, params):
         contentDisp = params.get('contentDisposition', None)
         if contentDisp is not None and contentDisp not in {'inline', 'attachment'}:
             raise ValidationException('Unallowed contentDisposition type "%s".' % contentDisp,
                                       'contentDisposition')
 
-        self.requireParams(['featureId'], params)
-        featureId = params['featureId']
+        self.requireParams(['responseId'], params)
+        responseId = params['responseId']
 
-        study = Study().load(annotation['meta']['studyId'], force=True, exc=True)
-        featureset = Study().getFeatureset(study)
-
-        if not any(featureId == feature['id'] for feature in featureset['localFeatures']):
-            raise ValidationException('Invalid featureId.', 'featureId')
-        if Annotation().getState(annotation) != Study().State.COMPLETE:
-            raise RestException('Only complete annotations can be rendered.')
-
-        renderData = Annotation().renderAnnotation(annotation, featureId)
+        renderData = Annotation().renderResponse(annotation, responseId)
 
         renderEncodedStream = ScikitSegmentationHelper.writeImage(renderData, 'jpeg')
         renderEncodedData = renderEncodedStream.getvalue()
@@ -163,9 +155,9 @@ class AnnotationResource(IsicResource):
         # earlier
         setRawResponse()
         setResponseHeader('Content-Type', 'image/jpeg')
-        contentName = '%s_%s_annotation.jpg' % (
+        contentName = '%s_%s_response.jpg' % (
             annotation['_id'],
-            featureId.replace('/', ',')  # TODO: replace with a better character
+            responseId.replace('/', ',')  # TODO: replace with a better character
         )
         if contentDisp == 'inline':
             setResponseHeader(
@@ -199,13 +191,13 @@ class AnnotationResource(IsicResource):
             raise RestException('Annotation is already complete.')
 
         bodyJson = self.getBodyJson()
-        self.requireParams(['status', 'startTime', 'stopTime', 'annotations'], bodyJson)
+        self.requireParams(['status', 'startTime', 'stopTime', 'responses'], bodyJson)
 
         annotation['meta']['status'] = bodyJson['status']
         annotation['meta']['startTime'] = datetime.datetime.utcfromtimestamp(
             bodyJson['startTime'] / 1000.0)
         annotation['meta']['stopTime'] = datetime.datetime.utcfromtimestamp(
             bodyJson['stopTime'] / 1000.0)
-        annotation['meta']['annotations'] = bodyJson['annotations']
+        annotation['meta']['responses'] = bodyJson['responses']
 
         Annotation().save(annotation)

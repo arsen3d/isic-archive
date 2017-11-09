@@ -344,7 +344,7 @@ const StudyResultsGlobalFeaturesTableView = View.extend({
 
     render: function () {
         this.$el.html(StudyResultsGlobalFeaturesTableTemplate({
-            features: this.collection.toArray()
+            globalResponses: this.collection.toArray()
         }));
 
         return this;
@@ -389,7 +389,7 @@ const StudyResultsGlobalFeaturesView = View.extend({
 
     updateResults: function () {
         this.results.update(
-            this.annotation.get('annotations'),
+            this.annotation.get('responses'),
             this.featureset.get('globalFeatures')
         );
     }
@@ -413,15 +413,15 @@ const StudyResultsFeatureImageView = View.extend({
     },
 
     render: function () {
-        let featureId = this.model.get('featureId');
+        let responseId = this.model.get('featureId');
         let annotationId = this.model.get('annotationId');
         let imageUrl = null;
-        if (featureId && annotationId) {
+        if (responseId && annotationId) {
             imageUrl = [
                 getApiRoot(),
                 'annotation', annotationId,
-                'render?contentDisposition=inline&featureId='
-            ].join('/') + encodeURIComponent(featureId);
+                'render?contentDisposition=inline&responseId='
+            ].join('/') + encodeURIComponent(responseId);
         }
 
         this.$el.html(StudyResultsFeatureImagePageTemplate({
@@ -500,10 +500,10 @@ const StudyResultsLocalFeaturesView = View.extend({
     },
 
     featureAnnotated: function (featureId) {
-        if (!featureId || !this.annotation.has('annotations')) {
+        if (!featureId || !this.annotation.has('responses')) {
             return false;
         }
-        let annotations = this.annotation.get('annotations');
+        let annotations = this.annotation.get('responses');
         return _.has(annotations, featureId);
     }
 });
